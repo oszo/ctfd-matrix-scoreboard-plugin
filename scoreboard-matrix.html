@@ -113,7 +113,7 @@ th.chalname {
 
 {% block scripts %}
     <script>var challenges = {{ challenges | tojson }};</script>
-    <script src="{{ request.script_root }}/themes/{{ ctf_theme() }}/static/js/utils.js"></script>
+    <script src="{{ request.script_root }}/themes/{{ ctf_theme }}/static/js/utils.js"></script>
     <script src="{{ request.script_root }}/matrix/static/dragscroll.js"></script>
     <script src="{{ request.script_root }}/matrix/static/scoreboard-matrix.js"></script>
-{% endblock %}
+{% endblock %}  
