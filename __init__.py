@@ -61,7 +61,7 @@ def load(app):
             # Sort into groups
             categories = set(map(lambda x:x['category'], jchals))
             jchals = [j for c in categories for j in jchals if j['category'] == c]
-            jchals = jchals[::-1]
+            jchals.sort()
             return jchals
         return []
 
@@ -80,7 +80,7 @@ def load(app):
             return redirect(url_for('auth.login', next=request.path))
 
         standings = get_standings()
-        standings = standings[::-1]
+        standings.sort()
 
         for i, x in enumerate(standings):
             json['standings'].append({'pos': i + 1, 'id': x['name'], 'team': x['name'],
